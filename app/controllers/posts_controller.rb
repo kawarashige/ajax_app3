@@ -12,12 +12,14 @@ class PostsController < ApplicationController
   end
 
   def checked
+    # binding.pry
     post = Post.find(params[:id])
     if post.checked
-      post.uodate(checked: false)
+      post.update(checked: false)
     else
       post.update(checked: true)
     end
+
     item = Post.find(params[:id])
     render json: { post: item }
   end
