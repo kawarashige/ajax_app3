@@ -4,10 +4,9 @@ class PostsController < ApplicationController
     @posts = Post.all.order(id: "DESC")
   end
 
-
-
   def create
-    pots = Post.create(content: nparams[:content], checked: false)
+    # binding.pry
+    post = Post.create(content: params[:content], checked: false)
     render json:{ post: post }
   end
 
@@ -23,4 +22,5 @@ class PostsController < ApplicationController
     item = Post.find(params[:id])
     render json: { post: item }
   end
+
 end
