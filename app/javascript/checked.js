@@ -2,7 +2,7 @@ function check() {
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
     if (post.getAttribute("data-load") != null) {
-      return nill;
+      return null;
     }
     post.setAttribute("data-load", "true");
     post.addEventListener("click", () => {
@@ -15,6 +15,7 @@ function check() {
         if (XHR.status != 200) {
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
           return null;
+          
         }
         const item = XHR.response.post;
         if (item.checked === true) {
