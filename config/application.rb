@@ -4,6 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+ActiveSupport::Deprecation.silenced = true if Rails.version == '6.0.3.2'
 Bundler.require(*Rails.groups)
 
 module FirstApp
